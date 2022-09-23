@@ -27,10 +27,10 @@ public class EventManager
 
     private EventManager() {
         Debug.Log("Setting events...");
-        playerTurnStartedEvent.AddListener(() => turnStartedEvent.Invoke());
-        enemyTurnStartedEvent.AddListener(() => turnStartedEvent.Invoke());
-        playerTurnEndedEvent.AddListener(() => turnEndedEvent.Invoke());
-        enemyTurnEndedEvent.AddListener(() => turnEndedEvent.Invoke());
+        playerTurnStartedEvent.AddListener(turnStartedEvent.Invoke);
+        enemyTurnStartedEvent.AddListener(turnStartedEvent.Invoke);
+        playerTurnEndedEvent.AddListener(turnEndedEvent.Invoke);
+        enemyTurnEndedEvent.AddListener(turnEndedEvent.Invoke);
     }
 
 }

@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class CardComponent : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void SetScriptableObject(Card_ScriptableObject card_so)
+    {
+        // TODO Initialize things here...
+    }
+
+    public void AdjustCardPosition()
     {
         
     }

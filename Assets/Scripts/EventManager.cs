@@ -26,7 +26,6 @@ public class EventManager
     public UnityEvent enemyTurnEndedEvent = new UnityEvent();
 
     private EventManager() {
-        Debug.Log("Setting events...");
         playerTurnStartedEvent.AddListener(turnStartedEvent.Invoke);
         enemyTurnStartedEvent.AddListener(turnStartedEvent.Invoke);
         playerTurnEndedEvent.AddListener(turnEndedEvent.Invoke);

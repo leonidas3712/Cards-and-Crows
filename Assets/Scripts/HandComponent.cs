@@ -13,16 +13,15 @@ public class HandComponent : MonoBehaviour
     protected List<CardComponent> cards = new List<CardComponent>();
     public TextMeshProUGUI current_mana_text;
     private bool isFirstTurn = true;
+    private CardComponent selectedCard;
 
     public CardComponent cardPrefab;
-
 
     public int Mana {
         get { 
             return current_mana;
         }
         set {
-            Debug.Log("Setting Mana to " + value);
             current_mana = value;
             current_mana_text.text = current_mana.ToString();
         }
@@ -54,6 +53,17 @@ public class HandComponent : MonoBehaviour
         }
     }
 
+    public void SelectCard(CardComponent cardComponent) {
+        if (cardComponent == selectedCard) {
+            return;
+        }
+        if (selectedCard != null) {
+            selectedCard.OnDeselectCard();
+        }
+        selectedCard = cardComponent;
+        selectedCard.OnSelectCard();
+    }
+
     void DrawCard() {
         Card_ScriptableObject card_so = deck.DrawCard();
 
@@ -62,9 +72,8 @@ public class HandComponent : MonoBehaviour
             return;
         }
         
-        Debug.Log("Drawing Card");
         CardComponent card = Instantiate(cardPrefab, transform);
-        card.SetScriptableObject(card_so);
+        card.InitiateCard(this, card_so);
 
         cards.Add(card);
 
@@ -72,7 +81,6 @@ public class HandComponent : MonoBehaviour
     }
 
     protected virtual void Awake() {
-        Debug.Log("Hand Start");
         GameManagerComponent.gameStartedEvent.AddListener(DrawInitialCards);
     }
 }

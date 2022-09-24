@@ -12,7 +12,6 @@ public class DeckComponent : MonoBehaviour
     public string playerName;
 
     public Card_ScriptableObject DrawCard() {
-        Debug.Log("There are " + cards.Count + " cards in " + playerName + "'s deck.");
         if (cards.Count == 0) {
             // TODO Trigger OnEmptyDeckDrawEvent
             return null;

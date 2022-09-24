@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyHandComponent : HandComponent
 {
     protected override void Awake() {
-        Debug.Log("Enemy Start");
         base.Awake();
         GameManagerComponent.enemyTurnStartedEvent.AddListener(PlayTurn);
         GameManagerComponent.gameStartedEvent.AddListener(GameManagerComponent.enemyTurnStartedEvent.Invoke);

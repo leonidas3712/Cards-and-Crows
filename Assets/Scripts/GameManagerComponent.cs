@@ -16,7 +16,6 @@ public class GameManagerComponent : MonoBehaviour
 
 
     private void InitializeInnerEvents() {
-        Debug.Log("Initializing inner events...");
         playerTurnStartedEvent.AddListener(turnStartedEvent.Invoke);
         enemyTurnStartedEvent.AddListener(turnStartedEvent.Invoke);
         playerTurnEndedEvent.AddListener(turnEndedEvent.Invoke);
@@ -37,7 +36,6 @@ public class GameManagerComponent : MonoBehaviour
     // Start is called before the first frame update    
     void Start()
     {
-        Debug.Log("Invoking events!");
         gameStartedEvent.Invoke();
     }
 }

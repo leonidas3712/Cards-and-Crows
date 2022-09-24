@@ -9,8 +9,4 @@ public class PlayerCardComponent : CardComponent
     {
         base.PlayCardToMinion(slot);
     }
-    void Start()
-    {
-        
-    }
 }

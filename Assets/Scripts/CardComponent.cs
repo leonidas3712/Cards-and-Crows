@@ -36,6 +36,6 @@ public class CardComponent : MonoBehaviour
 
     public void AdjustCardPosition(int cardIndex, int amountOfCards)
     {
-        transform.DOMoveX(distanceBetweenCards * (cardIndex - amountOfCards/2), 1);
+        transform.DOMoveX(distanceBetweenCards * (cardIndex - (amountOfCards-1)/2f), 1);
     }
 }

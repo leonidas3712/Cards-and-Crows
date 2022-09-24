@@ -11,7 +11,7 @@ public class SlotComponent : MonoBehaviour
 
 
 
-    void SetMinion(MinionComponent minion){
+    public void SetMinion(MinionComponent minion){
         if(current_minion)return;
 
         current_minion = minion;
@@ -19,7 +19,7 @@ public class SlotComponent : MonoBehaviour
         //****something with ui nad positioning
     }
 
-    void CreateMinion(Card_ScriptableObject card_so){
+    public void CreateMinion(Card_ScriptableObject card_so){
         if(current_minion)return;
         MinionComponent minion = Instantiate(minionPrefab,transform);
         minion.InitiateMinion(card_so);

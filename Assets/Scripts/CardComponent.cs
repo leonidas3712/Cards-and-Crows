@@ -6,23 +6,26 @@ using TMPro;
 
 public class CardComponent : MonoBehaviour
 {
+    public Card_ScriptableObject card_so;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI attributeText;
     public Image cardImage;
-
     public TextMeshProUGUI HP;
     public TextMeshProUGUI cost;
     public TextMeshProUGUI attackStrength;
     public void SetScriptableObject(Card_ScriptableObject card_so)
     {
+        this.card_so = card_so;
         nameText.text = card_so.cardName;
         //attributeText.text = card_so.attributes.ToString();
-
         cardImage.sprite = card_so.image;
-
         HP.text = card_so.hp.ToString();
         cost.text = card_so.cost.ToString();
         attackStrength.text = card_so.attackStrength.ToString();
+    }
+    public virtual void PlayCardToMinion(SlotComponent slot){
+        slot.CreateMinion(card_so);
+        Destroy(gameObject);
     }
 
     public void AdjustCardPosition()

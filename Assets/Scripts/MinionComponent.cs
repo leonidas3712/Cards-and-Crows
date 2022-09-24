@@ -15,7 +15,7 @@ public class MinionComponent : EntityComponent
     public void InitiateMinion(Card_ScriptableObject card_so){
             this.cardSO = card_so;
             SetAttributes();
-            hp = card_so.hp;
+            HP = card_so.hp;
             nameText.text = card_so.cardName;
             //attributeText.text = card_so.attributes.ToString();
             minionImage.sprite = card_so.image;
@@ -32,9 +32,7 @@ public class MinionComponent : EntityComponent
             attribute.RegisterAttribute();
         }
     }
-    public override void Death()
-    {
-        base.Death();
+    public override void Death() {
         Destroy(gameObject);
     }
 }

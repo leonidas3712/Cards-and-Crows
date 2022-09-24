@@ -26,13 +26,15 @@ public class HeroComponent : EntityComponent
             }
             enemyHeroInstance = this;
         }
-        this.hp = DEFAULT_HP_AMOUNT;
-        this.updateUI();
+        HP = DEFAULT_HP_AMOUNT;
+    }
+
+    public override void Death() {
+        throw new NotImplementedException();
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
 
     }
 }

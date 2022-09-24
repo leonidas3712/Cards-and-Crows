@@ -13,6 +13,7 @@ public class HandComponent : MonoBehaviour
     protected List<CardComponent> cards = new List<CardComponent>();
     public TextMeshProUGUI current_mana_text;
     private bool isFirstTurn = true;
+    protected bool isPlaying = false;
 
     public CardComponent cardPrefab;
 

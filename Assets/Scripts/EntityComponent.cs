@@ -4,32 +4,28 @@ using System;
 using UnityEngine;
 using TMPro;
 
-public class EntityComponent : MonoBehaviour
+public abstract class EntityComponent : MonoBehaviour
 {
-    [SerializeField]
     public int hp;
 
     public TextMeshProUGUI hpText;
 
-    public void updateUI()
-    {
-        hpText.text = hp.ToString();
-    }
     public int HP {
         get {
             return hp;
         }
+        protected set {
+            hp = value;
+            hpText.text = hp.ToString();
+        }
     }
     
     public void Hit(int damage) {
-        hp = Math.Max(0, hp - damage);
-        this.updateUI();
+        HP = Math.Max(0, hp - damage);
     }
 
     public bool IsAlive() {
         return hp != 0;
     }
-    public virtual void Death(){
-
-    }
+    public abstract void Death();
 }

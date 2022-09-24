@@ -48,7 +48,6 @@ public class HandComponent : MonoBehaviour
     private void AdjustCards() {
         int card_index = 0;
         foreach(Transform child in transform) {
-            Debug.Log(child);
             CardComponent cardComponent = child.GetComponent<CardComponent>(); 
             cardComponent.AdjustCardPosition(card_index, transform.childCount);
             card_index++;

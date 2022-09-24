@@ -615,7 +615,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1359072641
 PrefabInstance:
@@ -1190,7 +1190,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2339368265564391862, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2339368265564391862, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1242,12 +1242,12 @@ PrefabInstance:
       objectReference: {fileID: 4475435664852391567, guid: d4e764954f65ecc4ea9afb6af28782f0, type: 3}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 207fb0db259da034ab6e8e7509e03316, type: 2}
+      objectReference: {fileID: 11400000, guid: 65c1da5781a6b9e46bfd16a530abb5bd, type: 2}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[1]
       value: 

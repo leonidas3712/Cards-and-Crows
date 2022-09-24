@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using DG.Tweening;
 
 public class PlayerCardComponent : CardComponent
@@ -11,11 +12,31 @@ public class PlayerCardComponent : CardComponent
     private Vector3 originalScale;
     private Vector3 upScale;
     public Image border;
+
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI attributeText;
+    public Image cardImage;
+    public TextMeshProUGUI HP;
+    public TextMeshProUGUI cost;
+    public TextMeshProUGUI attackStrength;
     
     public void Start() {
         originalScale = transform.localScale;
         upScale = originalScale * 1.2f;
+        Debug.Log(border);
         border.color = Color.grey;
+    }
+
+    public override void InitiateCard(HandComponent hand, Card_ScriptableObject card_so)
+    {
+        base.InitiateCard(hand, card_so);
+
+        nameText.text = card_so.cardName;
+        //attributeText.text = card_so.attributes.ToString();
+        cardImage.sprite = card_so.image;
+        HP.text = card_so.hp.ToString();
+        cost.text = card_so.cost.ToString();
+        attackStrength.text = card_so.attackStrength.ToString();
     }
 
     public override void PlayCardToMinion(SlotComponent slot)

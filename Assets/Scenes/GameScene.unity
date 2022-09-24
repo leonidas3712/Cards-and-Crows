@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyHero
       objectReference: {fileID: 0}
+    - target: {fileID: 3008731403974171527, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+      propertyPath: _isPlayerHero
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1548,6 +1552,10 @@ PrefabInstance:
     - target: {fileID: 2649681209559055324, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
       propertyPath: m_Name
       value: PlayerHero
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008731403974171527, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+      propertyPath: _isPlayerHero
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
       propertyPath: m_RootOrder

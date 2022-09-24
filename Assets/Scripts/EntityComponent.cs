@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Entity : MonoBehaviour
+public class EntityComponent : MonoBehaviour
 {
     private int hp;
     public int HP {
@@ -12,8 +12,7 @@ public class Entity : MonoBehaviour
         }
     }
     
-    
     public void Hit(int damage) {
-        hp -= damage;
+        hp -= damage; 
     }
 }

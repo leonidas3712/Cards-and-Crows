@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 
 public class PlayerCardComponent : CardComponent
@@ -9,10 +10,12 @@ public class PlayerCardComponent : CardComponent
     private bool isCardSelected = false;
     private Vector3 originalScale;
     private Vector3 upScale;
-
+    public Image border;
+    
     public void Start() {
         originalScale = transform.localScale;
         upScale = originalScale * 1.2f;
+        border.color = Color.grey;
     }
 
     public override void PlayCardToMinion(SlotComponent slot)
@@ -49,6 +52,7 @@ public class PlayerCardComponent : CardComponent
     public virtual void OnSelectCard()
     {
         isCardSelected = true;
+        border.color = Color.green;
     }
 
     public virtual void OnDeselectCard()
@@ -57,5 +61,6 @@ public class PlayerCardComponent : CardComponent
         if (!isCardHovered) {
             transform.DOScale(originalScale, 0.3f);
         }
+        border.color = Color.grey;
     }
 }

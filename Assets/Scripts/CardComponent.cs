@@ -17,7 +17,7 @@ public class CardComponent : MonoBehaviour
     public TextMeshProUGUI cost;
     public TextMeshProUGUI attackStrength;
 
-    private readonly float distanceBetweenCards = 1.7f;
+    private readonly float distanceBetweenCards = 1.9f;
 
     public void InitiateCard(HandComponent hand, Card_ScriptableObject card_so)
     {

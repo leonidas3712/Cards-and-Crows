@@ -13,6 +13,8 @@ public class HandComponent : MonoBehaviour
     private List<CardComponent> cards = new List<CardComponent>();
     public TextMeshProUGUI current_mana_text;
 
+    public CardComponent cardPrefab;
+
     void Awake()
     {
         GameManagerComponent.playerTurnStartedEvent.AddListener(DrawCard);
@@ -36,7 +38,11 @@ public class HandComponent : MonoBehaviour
 
     void DrawCard() {
         Debug.Log("Player drawing card");
-        CardComponent card = deck.DrawCard(this);
+        Card_ScriptableObject card_so = deck.DrawCard();
+        CardComponent card = Instantiate(cardPrefab);
+        card.SetScriptableObject(card_so);
+        card.transform.parent = transform;
+
         if (card == null) {
             Debug.Log("No cards left in deck.");
             return;

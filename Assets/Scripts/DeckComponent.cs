@@ -8,7 +8,7 @@ public class DeckComponent : MonoBehaviour
     [SerializeField]
     private List<Card_ScriptableObject> cards;
 
-    public CardComponent DrawCard(HandComponent targetHand) {
+    public Card_ScriptableObject DrawCard() {
         Debug.Log("There are " + cards.Count + " cards in player's deck.");
         if (cards.Count == 0) {
             // TODO Trigger OnEmptyDeckDrawEvent
@@ -17,8 +17,6 @@ public class DeckComponent : MonoBehaviour
         int randomIndex = Random.Range(0, cards.Count - 1);
         Card_ScriptableObject card_so = cards[randomIndex];
         cards.RemoveAt(randomIndex);
-        CardComponent card = Instantiate(cardPrefab, targetHand.transform);
-        card.SetScriptableObject(card_so);
-        return card;
+        return card_so;
     }
 }

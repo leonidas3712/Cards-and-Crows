@@ -234,6 +234,7 @@ MonoBehaviour:
   deck: {fileID: 8925766135221572994}
   current_mana: 0
   current_mana_text: {fileID: 900814844}
+  cardPrefab: {fileID: 4475435664852391567, guid: d4e764954f65ecc4ea9afb6af28782f0, type: 3}
 --- !u!1001 &375693277
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class EnemyHandComponent : HandComponent
         GameManagerComponent.enemyTurnStartedEvent.AddListener(PlayTurn);
         GameManagerComponent.gameStartedEvent.AddListener(GameManagerComponent.enemyTurnStartedEvent.Invoke);
         GameManagerComponent.battleEndedEvent.AddListener(GameManagerComponent.enemyTurnStartedEvent.Invoke);
+        GameManagerComponent.enemyTurnStartedEvent.AddListener(() => { isPlaying = true; });
+        GameManagerComponent.enemyTurnEndedEvent.AddListener(() => { isPlaying = false; });
     }
 
     public override void PlayTurn() {

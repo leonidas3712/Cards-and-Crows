@@ -8,6 +8,7 @@ using DG.Tweening;
 public class CardComponent : MonoBehaviour
 {
     public Card_ScriptableObject card_so;
+
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI attributeText;
     public Image cardImage;

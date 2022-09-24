@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a621bff46f0fc4d498d9ffa3149c4641, type: 3}
   m_Name: Scarecrow
   m_EditorClassIdentifier: 
-  attributes:
-  - {fileID: 0}
-  - {fileID: 0}
+  attributes: []
   cardName: Yoav
   attackStrength: 4
   hp: 3

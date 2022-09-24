@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class HeroComponent : EntityComponent
 {
     public static HeroComponent playerHeroInstance;
     public static HeroComponent enemyHeroInstance;
+
+    public int DEFAULT_HP_AMOUNT = 20;
 
     [SerializeField]
     private bool _isPlayerHero; // Do not modify! (Modified within Editor)
@@ -24,6 +26,8 @@ public class HeroComponent : EntityComponent
             }
             enemyHeroInstance = this;
         }
+        this.hp = DEFAULT_HP_AMOUNT;
+        this.updateUI();
     }
 
     // Start is called before the first frame update

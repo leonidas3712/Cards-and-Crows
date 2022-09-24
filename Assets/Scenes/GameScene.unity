@@ -1929,6 +1929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lane
       objectReference: {fileID: 0}
+    - target: {fileID: 3721003758325459285, guid: 39062cc4442c5944795e6b5c5e108605, type: 3}
+      propertyPath: minionPrefab
+      value: 
+      objectReference: {fileID: 2937783962519150134, guid: c259690da1163464399f0e8194e0281f, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 39062cc4442c5944795e6b5c5e108605, type: 3}

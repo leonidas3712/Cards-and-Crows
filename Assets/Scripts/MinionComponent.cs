@@ -1,15 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
+using UnityEngine.UI;
 public class MinionComponent : EntityComponent
 {
     public Card_ScriptableObject cardSO;
     List<Attribute> attributeList;
-
-    public void InitiateMinion(Card_ScriptableObject cardSO){
-            this.cardSO = cardSO;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI attributeText;
+    public Image minionImage;
+    public TextMeshProUGUI uiHP;
+    public TextMeshProUGUI attackStrength;
+    public void InitiateMinion(Card_ScriptableObject card_so){
+            this.cardSO = card_so;
             SetAttributes();
+            hp = card_so.hp;
+            nameText.text = card_so.cardName;
+            //attributeText.text = card_so.attributes.ToString();
+            minionImage.sprite = card_so.image;
+            uiHP.text = card_so.hp.ToString();
+            attackStrength.text = card_so.attackStrength.ToString();
         }
     public void SetAttributes()
     {
@@ -21,6 +32,9 @@ public class MinionComponent : EntityComponent
             attribute.RegisterAttribute();
         }
     }
-    
-  
+    public override void Death()
+    {
+        base.Death();
+        Destroy(gameObject);
+    }
 }

@@ -20,9 +20,11 @@ public class PlayerHandComponent : MonoBehaviour
             Debug.Log("No cards left in deck.");
             return;
         }
-        foreach(CardComponent child in transform)
+        foreach(Transform child in transform)
         {
-            child.AdjustCardPosition();
+            Debug.Log(child);
+            CardComponent cardComponent = child.GetComponent<CardComponent>(); 
+            cardComponent.AdjustCardPosition();
         }
     }
 }

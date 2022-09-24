@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class EnemyHandComponent : HandComponent
 {
-    protected override void Awake() {
-        base.Awake();
+    protected override void Start() {
+        base.Start();
         GameManagerComponent.enemyTurnStartedEvent.AddListener(PlayTurn);
+        GameManagerComponent.gameStartedEvent.AddListener(GameManagerComponent.enemyTurnStartedEvent.Invoke);
     }
 
     public override void PlayTurn() {
         base.PlayTurn();
+        Debug.Log("Enemy Turn Start" + gameObject);
+        Invoke(nameof(EndTurn), 3);
+    }
+
+    void EndTurn() {
+        Debug.Log("Enemy turn end");
+        GameManagerComponent.enemyTurnEndedEvent.Invoke();
     }
 }

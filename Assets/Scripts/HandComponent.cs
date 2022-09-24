@@ -39,13 +39,13 @@ public class HandComponent : MonoBehaviour
     }
 
     void DrawInitialCards() {
+        Debug.Log("Drawing initial cards");
         for (int i = 0; i < INITIAL_CARD_COUNT; i++) {
             DrawCard();
         }
     }
 
     void DrawCard() {
-        Debug.Log("Player drawing card");
         Card_ScriptableObject card_so = deck.DrawCard();
         CardComponent card = Instantiate(cardPrefab, transform);
         card.SetScriptableObject(card_so);
@@ -63,7 +63,7 @@ public class HandComponent : MonoBehaviour
         }
     }
 
-    protected virtual void Awake() {
+    protected virtual void Start() {
         GameManagerComponent.gameStartedEvent.AddListener(DrawInitialCards);
     }
 }

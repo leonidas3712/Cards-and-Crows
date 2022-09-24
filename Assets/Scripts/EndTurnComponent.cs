@@ -17,7 +17,7 @@ public class EndTurnComponent : MonoBehaviour
     }
 
     public void EndTurn() {
-        Debug.Log("Turn End!");
+        Debug.Log("Player Turn Ended");
         endturn_btn.interactable = false;
         GameManagerComponent.playerTurnEndedEvent.Invoke();
     }

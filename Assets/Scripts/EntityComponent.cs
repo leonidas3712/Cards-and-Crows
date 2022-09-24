@@ -17,7 +17,7 @@ public class EntityComponent : MonoBehaviour
         hp = Math.Max(0, hp - damage);
     }
 
-    public bool IsAlive() { 
+    public bool IsAlive() {
         return hp != 0;
     }
 }

@@ -47,13 +47,14 @@ public class HandComponent : MonoBehaviour
 
     void DrawCard() {
         Card_ScriptableObject card_so = deck.DrawCard();
-        CardComponent card = Instantiate(cardPrefab, transform);
-        card.SetScriptableObject(card_so);
 
-        if (card == null) {
+        if (card_so == null) {
             Debug.Log("No cards left in deck.");
             return;
         }
+
+        CardComponent card = Instantiate(cardPrefab, transform);
+        card.SetScriptableObject(card_so);
 
         cards.Add(card);
         foreach(Transform child in transform) {

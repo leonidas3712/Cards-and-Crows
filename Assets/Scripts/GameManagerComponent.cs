@@ -24,15 +24,6 @@ public class GameManagerComponent : MonoBehaviour
     }
 
     void Awake() {
-        gameStartedEvent.RemoveAllListeners();
-        gameEndedEvent.RemoveAllListeners();
-        turnStartedEvent.RemoveAllListeners();
-        playerTurnStartedEvent.RemoveAllListeners();
-        enemyTurnStartedEvent.RemoveAllListeners();
-        turnEndedEvent.RemoveAllListeners();
-        playerTurnEndedEvent.RemoveAllListeners();
-        enemyTurnEndedEvent.RemoveAllListeners();
-        
         InitializeInnerEvents();
     }
 

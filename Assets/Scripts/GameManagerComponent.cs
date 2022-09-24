@@ -33,11 +33,11 @@ public class GameManagerComponent : MonoBehaviour
         Debug.Log("Invoking events!");
         gameStartedEvent.Invoke();
         
-        // playerTurnStartedEvent.Invoke();
-        // playerTurnEndedEvent.Invoke();
-        // enemyTurnStartedEvent.Invoke();
-        // enemyTurnEndedEvent.Invoke();
-        // gameEndedEvent.Invoke();
+        playerTurnStartedEvent.Invoke();
+        playerTurnEndedEvent.Invoke();
+        enemyTurnStartedEvent.Invoke();
+        enemyTurnEndedEvent.Invoke();
+        gameEndedEvent.Invoke();
     }
 
     

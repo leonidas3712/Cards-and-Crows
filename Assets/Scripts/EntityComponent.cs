@@ -14,6 +14,6 @@ public class Entity : MonoBehaviour
     
     
     public void Hit(int damage) {
-        hp = 
+       // hp = 
     }
 }

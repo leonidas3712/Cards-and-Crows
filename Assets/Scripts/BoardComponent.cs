@@ -15,6 +15,11 @@ public class BoardComponent : MonoBehaviour
             // lane.Attack();
         }
         Debug.Log("Battle Ended");
-        GameManagerComponent.battleEndedEvent.Invoke();
+        if (GameManagerComponent.IsGameEnd()) {
+            GameManagerComponent.gameEndedEvent.Invoke();
+        }
+        else {   
+            GameManagerComponent.battleEndedEvent.Invoke();
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class CardComponent : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class CardComponent : MonoBehaviour
     public TextMeshProUGUI HP;
     public TextMeshProUGUI cost;
     public TextMeshProUGUI attackStrength;
+
+    private readonly int distanceBetweenCards = 2;
+
     public void SetScriptableObject(Card_ScriptableObject card_so)
     {
         this.card_so = card_so;
@@ -23,13 +27,16 @@ public class CardComponent : MonoBehaviour
         cost.text = card_so.cost.ToString();
         attackStrength.text = card_so.attackStrength.ToString();
     }
-    public virtual void PlayCardToMinion(SlotComponent slot){
+
+    public virtual void PlayCardToMinion(SlotComponent slot)
+    {
         slot.CreateMinion(card_so);
         Destroy(gameObject);
     }
 
-    public void AdjustCardPosition()
+    public void AdjustCardPosition(int cardIndex, int amountOfCards)
     {
-        
+        Debug.Log(cardIndex);
+        transform.DOMoveX(distanceBetweenCards * (cardIndex - amountOfCards/2), 1);
     }
 }

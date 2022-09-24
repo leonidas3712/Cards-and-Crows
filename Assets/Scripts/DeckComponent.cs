@@ -9,7 +9,7 @@ public class DeckComponent : MonoBehaviour
     [SerializeField]
     private List<Card_ScriptableObject> cards;
     [SerializeField]
-    private string playerName;
+    public string playerName;
 
     public Card_ScriptableObject DrawCard() {
         Debug.Log("There are " + cards.Count + " cards in " + playerName + "'s deck.");

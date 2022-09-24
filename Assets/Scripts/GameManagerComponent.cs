@@ -13,6 +13,7 @@ public class GameManagerComponent : MonoBehaviour
     public static UnityEvent turnEndedEvent = new UnityEvent();
     public static UnityEvent playerTurnEndedEvent = new UnityEvent();
     public static UnityEvent enemyTurnEndedEvent = new UnityEvent();
+    public static bool isGameStarted = false;
 
 
     private void InitializeInnerEvents() {
@@ -27,7 +28,7 @@ public class GameManagerComponent : MonoBehaviour
         InitializeInnerEvents();
     }
 
-    public bool IsGameEnd() { 
+    public static bool IsGameEnd() { 
         return (
             !HeroComponent.playerHeroInstance.IsAlive()
             || !HeroComponent.enemyHeroInstance.IsAlive()
@@ -39,5 +40,6 @@ public class GameManagerComponent : MonoBehaviour
     {
         Debug.Log("Invoking events!");
         gameStartedEvent.Invoke();
+        playerTurnStartedEvent.Invoke();
     }
 }

@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class PlayerHandComponent : HandComponent
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    protected override void Awake() {
+        base.Awake();
+        GameManagerComponent.playerTurnStartedEvent.AddListener(PlayTurn);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public override void PlayTurn() {
+        base.PlayTurn();
     }
 }

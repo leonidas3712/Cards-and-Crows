@@ -9,25 +9,33 @@ public class HandComponent : MonoBehaviour
     public const int DEFAULT_MANA_AMOUNT = 5;
     public const int INITIAL_CARD_COUNT = 5;
     public DeckComponent deck;
-    public int current_mana;
-    private List<CardComponent> cards = new List<CardComponent>();
+    private int current_mana;
+    protected List<CardComponent> cards = new List<CardComponent>();
     public TextMeshProUGUI current_mana_text;
+    private bool isFirstTurn = true;
 
     public CardComponent cardPrefab;
 
-    void Awake()
-    {
-        GameManagerComponent.playerTurnStartedEvent.AddListener(DrawCard);
-        GameManagerComponent.playerTurnStartedEvent.AddListener(() => {
-            SetMana(DEFAULT_MANA_AMOUNT);
-        });
+
+    public int Mana {
+        get { 
+            return current_mana;
+        }
+        set {
+            Debug.Log("Setting Mana to " + value);
+            current_mana = value;
+            current_mana_text.text = current_mana.ToString();
+        }
     }
 
-    void SetMana(int mana)
-    {
-        Debug.Log("Setting Mana to " + mana);
-        current_mana = mana;
-        current_mana_text.text = current_mana.ToString();
+    public virtual void PlayTurn() {
+        Mana = DEFAULT_MANA_AMOUNT;
+        if (isFirstTurn) {
+            isFirstTurn = false;
+        }
+        else {
+            DrawCard();
+        }
     }
 
     void DrawInitialCards() {
@@ -39,9 +47,8 @@ public class HandComponent : MonoBehaviour
     void DrawCard() {
         Debug.Log("Player drawing card");
         Card_ScriptableObject card_so = deck.DrawCard();
-        CardComponent card = Instantiate(cardPrefab);
+        CardComponent card = Instantiate(cardPrefab, transform);
         card.SetScriptableObject(card_so);
-        card.transform.parent = transform;
 
         if (card == null) {
             Debug.Log("No cards left in deck.");
@@ -54,5 +61,9 @@ public class HandComponent : MonoBehaviour
             CardComponent cardComponent = child.GetComponent<CardComponent>(); 
             cardComponent.AdjustCardPosition();
         }
+    }
+
+    protected virtual void Awake() {
+        GameManagerComponent.gameStartedEvent.AddListener(DrawInitialCards);
     }
 }

@@ -7,9 +7,7 @@ using DG.Tweening;
 
 public class CardComponent : MonoBehaviour
 {
-    private HandComponent hand;
-    private bool isCardHovered = false;
-    private bool isCardSelected = false;
+    protected HandComponent hand;
     public Card_ScriptableObject card_so;
 
     public TextMeshProUGUI nameText;
@@ -20,14 +18,6 @@ public class CardComponent : MonoBehaviour
     public TextMeshProUGUI attackStrength;
 
     private readonly float distanceBetweenCards = 1.7f;
-
-    private Vector3 originalScale;
-    private Vector3 upScale;
-
-    public void Start() {
-        originalScale = transform.localScale;
-        upScale = originalScale * 1.2f;
-    }
 
     public void InitiateCard(HandComponent hand, Card_ScriptableObject card_so)
     {
@@ -46,46 +36,7 @@ public class CardComponent : MonoBehaviour
         slot.CreateMinion(card_so);
         Destroy(gameObject);
     }
-
-    void OnMouseEnter()
-    {
-        if (isCardHovered) {
-            return;
-        }
-        isCardHovered = true;
-        transform.DOScale(upScale, 0.3f);
-    }
-
-    void OnMouseOver() {
-        if (Input.GetMouseButtonDown(0)) {
-            hand.SelectCard(this);
-        }
-    }
-
-    void OnMouseExit()
-    {
-        if (!isCardHovered) {
-            return;
-        }
-        isCardHovered = false;
-        if (!isCardSelected) {
-            transform.DOScale(originalScale, 0.3f);
-        }
-    }
     
-    public virtual void OnSelectCard()
-    {
-        isCardSelected = true;
-    }
-
-    public virtual void OnDeselectCard()
-    {
-        isCardSelected = false;
-        if (!isCardHovered) {
-            transform.DOScale(originalScale, 0.3f);
-        }
-    }
-
     public void AdjustCardPosition(int cardIndex, int amountOfCards)
     {
         transform.DOMoveX(distanceBetweenCards * (cardIndex - (amountOfCards-1)/2f), 1);

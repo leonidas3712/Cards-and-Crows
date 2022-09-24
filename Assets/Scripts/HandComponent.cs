@@ -13,7 +13,6 @@ public class HandComponent : MonoBehaviour
     protected List<CardComponent> cards = new List<CardComponent>();
     public TextMeshProUGUI current_mana_text;
     private bool isFirstTurn = true;
-    private CardComponent selectedCard;
 
     public CardComponent cardPrefab;
 
@@ -50,17 +49,6 @@ public class HandComponent : MonoBehaviour
             cardComponent.AdjustCardPosition(card_index, transform.childCount);
             card_index++;
         }
-    }
-
-    public void SelectCard(CardComponent cardComponent) {
-        if (cardComponent == selectedCard) {
-            return;
-        }
-        if (selectedCard != null) {
-            selectedCard.OnDeselectCard();
-        }
-        selectedCard = cardComponent;
-        selectedCard.OnSelectCard();
     }
 
     void DrawCard() {

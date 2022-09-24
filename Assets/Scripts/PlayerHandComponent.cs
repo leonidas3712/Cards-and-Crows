@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerHandComponent : HandComponent
 {
+    private PlayerCardComponent selectedCard;
+
     protected override void Awake() {
         base.Awake();
         GameManagerComponent.playerTurnStartedEvent.AddListener(PlayTurn);
@@ -13,5 +15,16 @@ public class PlayerHandComponent : HandComponent
     public override void PlayTurn() {
         base.PlayTurn();
         Debug.Log("Player Turn started");
+    }
+
+    public void SelectCard(PlayerCardComponent cardComponent) {
+        if (cardComponent == selectedCard) {
+            return;
+        }
+        if (selectedCard != null) {
+            selectedCard.OnDeselectCard();
+        }
+        selectedCard = cardComponent;
+        selectedCard.OnSelectCard();
     }
 }

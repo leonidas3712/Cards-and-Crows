@@ -38,7 +38,6 @@ public class HandComponent : MonoBehaviour
     }
 
     void DrawInitialCards() {
-        Debug.Log("Drawing initial cards");
         for (int i = 0; i < INITIAL_CARD_COUNT; i++) {
             DrawCard();
         }

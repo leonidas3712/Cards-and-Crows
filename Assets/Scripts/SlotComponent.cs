@@ -12,7 +12,9 @@ public class SlotComponent : MonoBehaviour
 
 
     public void SetMinion(MinionComponent minion){
-        if(current_minion)return;
+        if(null != current_minion){
+            return;
+        }
 
         current_minion = minion;
 

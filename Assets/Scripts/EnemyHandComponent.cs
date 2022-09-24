@@ -8,6 +8,7 @@ public class EnemyHandComponent : HandComponent
         base.Awake();
         GameManagerComponent.enemyTurnStartedEvent.AddListener(PlayTurn);
         GameManagerComponent.gameStartedEvent.AddListener(GameManagerComponent.enemyTurnStartedEvent.Invoke);
+        GameManagerComponent.battleEndedEvent.AddListener(GameManagerComponent.enemyTurnStartedEvent.Invoke);
     }
 
     public override void PlayTurn() {

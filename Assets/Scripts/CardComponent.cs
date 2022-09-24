@@ -15,7 +15,7 @@ public class CardComponent : MonoBehaviour
     public TextMeshProUGUI cost;
     public TextMeshProUGUI attackStrength;
 
-    private readonly int distanceBetweenCards = 2;
+    private readonly float distanceBetweenCards = 1.7f;
 
     public void SetScriptableObject(Card_ScriptableObject card_so)
     {

@@ -8,7 +8,7 @@ public class EndTurnComponent : MonoBehaviour
     [SerializeField]
     private Button endturn_btn;
 
-    public void Start() {
+    public void Awake() {
         GameManagerComponent.playerTurnStartedEvent.AddListener(
             () => {
                 endturn_btn.interactable = true;

@@ -61,7 +61,8 @@ public class HandComponent : MonoBehaviour
             Debug.Log("No cards left in deck.");
             return;
         }
-
+        
+        Debug.Log("Drawing Card");
         CardComponent card = Instantiate(cardPrefab, transform);
         card.SetScriptableObject(card_so);
 
@@ -70,7 +71,8 @@ public class HandComponent : MonoBehaviour
         AdjustCards();
     }
 
-    protected virtual void Start() {
+    protected virtual void Awake() {
+        Debug.Log("Hand Start");
         GameManagerComponent.gameStartedEvent.AddListener(DrawInitialCards);
     }
 }

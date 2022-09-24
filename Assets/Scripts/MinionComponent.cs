@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MinionComponent : MonoBehaviour
+public class MinionComponent : EntityComponent
 {
     public Card_ScriptableObject cardSO;
     List<Attribute> attributeList;

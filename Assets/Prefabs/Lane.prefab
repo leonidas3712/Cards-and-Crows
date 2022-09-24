@@ -72,6 +72,14 @@ PrefabInstance:
       propertyPath: opposingSlot
       value: 
       objectReference: {fileID: 3721003758325459285}
+    - target: {fileID: 6729895397080926004, guid: 45df704b1e4a3e740b4c4ef8822abfcb, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729895397080926004, guid: 45df704b1e4a3e740b4c4ef8822abfcb, type: 3}
+      propertyPath: m_FlipY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8517153558675061380, guid: 45df704b1e4a3e740b4c4ef8822abfcb, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -82,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8517153558675061380, guid: 45df704b1e4a3e740b4c4ef8822abfcb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8517153558675061380, guid: 45df704b1e4a3e740b4c4ef8822abfcb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -165,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8517153558675061380, guid: 45df704b1e4a3e740b4c4ef8822abfcb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8517153558675061380, guid: 45df704b1e4a3e740b4c4ef8822abfcb, type: 3}
       propertyPath: m_LocalPosition.z

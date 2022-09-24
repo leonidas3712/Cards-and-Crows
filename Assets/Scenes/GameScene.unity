@@ -232,7 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 8925766135221572994}
-  current_mana: 0
   current_mana_text: {fileID: 900814844}
   cardPrefab: {fileID: 4475435664852391567, guid: d4e764954f65ecc4ea9afb6af28782f0, type: 3}
 --- !u!1001 &375693277
@@ -1050,8 +1049,8 @@ Canvas:
   m_GameObject: {fileID: 1409965085}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1484657442}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

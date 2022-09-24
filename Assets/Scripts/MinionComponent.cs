@@ -6,7 +6,12 @@ public class MinionComponent : MonoBehaviour
 {
     public Card_ScriptableObject cardSO;
     List<Attribute> attributeList;
-    public void Awake()
+
+    public void InitiateMinion(Card_ScriptableObject cardSO){
+            this.cardSO = cardSO;
+            SetAttributes();
+        }
+    public void SetAttributes()
     {
         attributeList = new List<Attribute>();
         foreach(GameObject attributeObject in cardSO.attributes){
@@ -16,6 +21,6 @@ public class MinionComponent : MonoBehaviour
             attribute.RegisterAttribute();
         }
     }
-
+    
   
 }

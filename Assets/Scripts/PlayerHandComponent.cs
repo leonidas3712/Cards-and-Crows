@@ -10,7 +10,7 @@ public class PlayerHandComponent : MonoBehaviour
 
     void Awake()
     {
-        EventManager.Instance.playerTurnStartedEvent.AddListener(DrawCard);
+        GameManagerComponent.playerTurnStartedEvent.AddListener(DrawCard);
     }
 
     void DrawCard() {

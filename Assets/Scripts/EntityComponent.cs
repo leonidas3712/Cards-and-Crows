@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 
@@ -13,6 +14,10 @@ public class EntityComponent : MonoBehaviour
     }
     
     public void Hit(int damage) {
-        hp -= damage; 
+        hp = Math.Max(0, hp - damage);
+    }
+
+    public bool IsAlive() { 
+        return hp != 0;
     }
 }

@@ -8,7 +8,7 @@ public class DeckComponent : MonoBehaviour
     [SerializeField]
     private List<Card_ScriptableObject> cards;
 
-    public CardComponent DrawCard(PlayerHandComponent targetHand) {
+    public CardComponent DrawCard(HandComponent targetHand) {
         Debug.Log("There are " + cards.Count + " cards in player's deck.");
         if (cards.Count == 0) {
             // TODO Trigger OnEmptyDeckDrawEvent

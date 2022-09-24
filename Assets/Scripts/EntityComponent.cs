@@ -6,7 +6,8 @@ using TMPro;
 
 public class EntityComponent : MonoBehaviour
 {
-    protected int hp;
+    [SerializeField]
+    public int hp;
 
     public TextMeshProUGUI hpText;
 
@@ -27,5 +28,8 @@ public class EntityComponent : MonoBehaviour
 
     public bool IsAlive() {
         return hp != 0;
+    }
+    public virtual void Death(){
+
     }
 }

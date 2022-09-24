@@ -12,7 +12,7 @@ public class BoardComponent : MonoBehaviour
     void Battle() {
         Debug.Log("Battle Started");
         foreach (LaneComponent lane in GetComponentsInChildren<LaneComponent>()) {
-            // lane.Attack();
+            lane.Attack();
         }
         Debug.Log("Battle Ended");
         if (GameManagerComponent.IsGameEnd()) {

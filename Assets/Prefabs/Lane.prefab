@@ -46,6 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c018b59c0aac9488f7853b5bca9fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSlot: {fileID: 3721003758325459285}
+  enemySlot: {fileID: 4825247465087442313}
+  playerTarget: {fileID: 0}
+  enemyTarget: {fileID: 0}
+  playerMinion: {fileID: 0}
+  enemyMinion: {fileID: 0}
 --- !u!1001 &1909810899220474256
 PrefabInstance:
   m_ObjectHideFlags: 0

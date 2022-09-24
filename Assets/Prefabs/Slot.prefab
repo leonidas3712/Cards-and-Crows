@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 0}
-  opposingSlot: {fileID: 0}
+  current_minion: {fileID: 0}
+  minionPrefab: {fileID: 2937783962519150134, guid: c259690da1163464399f0e8194e0281f, type: 3}
 --- !u!212 &6729895397080926004
 SpriteRenderer:
   m_ObjectHideFlags: 0

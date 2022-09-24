@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class BoardComponent : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Awake() {
+        GameManagerComponent.battleStartedEvent.AddListener(Battle);
+        GameManagerComponent.playerTurnEndedEvent.AddListener(GameManagerComponent.battleStartedEvent.Invoke);
+    }
+
+    void Battle() {
+        Debug.Log("Battle Started");
+        foreach (LaneComponent lane in GetComponentsInChildren<LaneComponent>()) {
+            // lane.Attack();
+        }
+        Debug.Log("Battle Ended");
+        GameManagerComponent.battleEndedEvent.Invoke();
     }
 }

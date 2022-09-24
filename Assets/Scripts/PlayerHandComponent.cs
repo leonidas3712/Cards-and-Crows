@@ -6,7 +6,6 @@ public class PlayerHandComponent : HandComponent
 {
     protected override void Awake() {
         base.Awake();
-        Debug.Log("Listening to player events");
         GameManagerComponent.playerTurnStartedEvent.AddListener(PlayTurn);
         GameManagerComponent.enemyTurnEndedEvent.AddListener(GameManagerComponent.playerTurnStartedEvent.Invoke);
     }

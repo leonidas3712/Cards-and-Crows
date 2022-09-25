@@ -2098,7 +2098,7 @@ PrefabInstance:
       objectReference: {fileID: 4475435664852391567, guid: d4e764954f65ecc4ea9afb6af28782f0, type: 3}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: playerName
-      value: Hero
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.size

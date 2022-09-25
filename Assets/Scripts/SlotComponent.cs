@@ -51,6 +51,7 @@ public class SlotComponent : MonoBehaviour
         current_minion = minion;
         current_minion.transform.SetParent(transform);
         current_minion.transform.localPosition = Vector3.zero;
+        current_minion.SetSlot(this);
     }
 
     public void switchMinion(SlotComponent other_slot) {

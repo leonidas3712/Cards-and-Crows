@@ -28,6 +28,7 @@ public class PlayerHandComponent : HandComponent
     public void SelectCard(PlayerCardComponent cardComponent) {
         if (selectedCard != null) {
             selectedCard.OnDeselectCard();
+            selectedCard = null;
         }
         if (cardComponent == selectedCard) {
             return;

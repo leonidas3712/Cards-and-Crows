@@ -91,7 +91,7 @@ public class GameManagerComponent : MonoBehaviour
                 messagePanel.gameObject.SetActive(true);
             }
         );
-        messageSequence.Append(messagePanel.DOFade(1, 0.5f));
+        messageSequence.Append(messagePanel.DOFade(0.85f, 0.5f));
         messageSequence.Join(messageText.DOFade(1, 0.5f));
         messageSequence.AppendInterval(message.messageTime);
         messageSequence.Append(messagePanel.DOFade(0, 0.5f));

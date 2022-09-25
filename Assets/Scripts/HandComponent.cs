@@ -10,7 +10,8 @@ public class HandComponent : MonoBehaviour
     public const int INITIAL_CARD_COUNT = 5;
     public DeckComponent deck;
     private int current_mana;
-    protected List<CardComponent> cards = new List<CardComponent>();
+    [HideInInspector]
+    public List<CardComponent> cards = new List<CardComponent>();
     public TextMeshProUGUI current_mana_text;
     private bool isFirstTurn = true;
     protected bool isPlaying = false;

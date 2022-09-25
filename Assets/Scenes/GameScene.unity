@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &35586622 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4825247465087442313, guid: 39062cc4442c5944795e6b5c5e108605, type: 3}
+  m_PrefabInstance: {fileID: 88416208057783103}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37252815fa76e447893c87a6ab1f7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &40992455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 8925766135221572994}
+  cards: []
   current_mana_text: {fileID: 900814844}
   cardPrefab: {fileID: 4475435664852391567, guid: d4e764954f65ecc4ea9afb6af28782f0, type: 3}
   selectedCard: {fileID: 0}
@@ -462,6 +474,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
   m_PrefabInstance: {fileID: 375693277}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &406231517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4825247465087442313, guid: 39062cc4442c5944795e6b5c5e108605, type: 3}
+  m_PrefabInstance: {fileID: 40992455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37252815fa76e447893c87a6ab1f7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &483961754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1382,7 @@ GameObject:
   - component: {fileID: 1285553762}
   - component: {fileID: 1285553761}
   - component: {fileID: 1285553763}
+  - component: {fileID: 1285553764}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1408,6 +1432,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHand: {fileID: 106888831}
+--- !u!114 &1285553764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285553760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74476c891221004bbe0d1bd05467e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 1335338140}
+  slots:
+  - {fileID: 35586622}
+  - {fileID: 1983801791}
+  - {fileID: 1807694313}
+  - {fileID: 1815561673}
+  - {fileID: 406231517}
 --- !u!1 &1335338138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,6 +1496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 921750692}
+  cards: []
   current_mana_text: {fileID: 309944307}
   cardPrefab: {fileID: 8179640675338378138, guid: 853ac1ce23de9134ea0531e6e18efba5, type: 3}
 --- !u!1001 &1359072641
@@ -1935,6 +1979,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 88416208722778400, guid: 39062cc4442c5944795e6b5c5e108605, type: 3}
   m_PrefabInstance: {fileID: 88416208057783103}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1807694313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4825247465087442313, guid: 39062cc4442c5944795e6b5c5e108605, type: 3}
+  m_PrefabInstance: {fileID: 1949404900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37252815fa76e447893c87a6ab1f7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1815561673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4825247465087442313, guid: 39062cc4442c5944795e6b5c5e108605, type: 3}
+  m_PrefabInstance: {fileID: 975074262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37252815fa76e447893c87a6ab1f7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1949404900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1999,6 +2065,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 88416208722778400, guid: 39062cc4442c5944795e6b5c5e108605, type: 3}
   m_PrefabInstance: {fileID: 1949404900}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1983801791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4825247465087442313, guid: 39062cc4442c5944795e6b5c5e108605, type: 3}
+  m_PrefabInstance: {fileID: 1184460232}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37252815fa76e447893c87a6ab1f7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &88416208057783103
 PrefabInstance:
   m_ObjectHideFlags: 0

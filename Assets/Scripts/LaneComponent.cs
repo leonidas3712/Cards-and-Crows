@@ -5,8 +5,10 @@ using UnityEngine;
 public class LaneComponent : MonoBehaviour
 {
     public SlotComponent playerSlot,enemySlot;
-    public EntityComponent playerTarget,enemyTarget;
 
+    [HideInInspector]
+    public EntityComponent playerTarget,enemyTarget;
+    [HideInInspector]
     public MinionComponent playerMinion,enemyMinion;
     public void Attack(){
         if (null != playerSlot.current_minion) {

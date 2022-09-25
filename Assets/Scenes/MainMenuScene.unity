@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 472166021}
   - component: {fileID: 472166020}
   m_Layer: 0
-  m_Name: Ofir_playing-cards_and_crows_autumn_200c62b9-fea3-4b18-9e66-2ac11cc42141
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

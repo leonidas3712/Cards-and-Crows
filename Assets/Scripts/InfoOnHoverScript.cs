@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 using DG.Tweening;
 
-public class TradePositionsHoverScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class InfoOnHoverScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public TextMeshProUGUI text;
 
@@ -14,7 +14,15 @@ public class TradePositionsHoverScript : MonoBehaviour, IPointerEnterHandler, IP
         text.DOFade(1, 0.3f);
     }
 
+    public void OnMouseEnter() {
+        text.DOFade(1, 0.3f);
+    }
+
     public void OnPointerExit(PointerEventData eventData) {
+        text.DOFade(0, 0.3f);
+    }
+
+    public void OnMouseExit() {
         text.DOFade(0, 0.3f);
     }
 }

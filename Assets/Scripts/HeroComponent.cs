@@ -8,7 +8,7 @@ public class HeroComponent : EntityComponent
     public static HeroComponent playerHeroInstance;
     public static HeroComponent enemyHeroInstance;
 
-    public int DEFAULT_HP_AMOUNT = 20;
+    public int DEFAULT_HP_AMOUNT;
 
     [SerializeField]
     private bool _isPlayerHero; // Do not modify! (Modified within Editor)

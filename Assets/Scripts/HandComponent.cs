@@ -6,9 +6,11 @@ using TMPro;
 
 public class HandComponent : MonoBehaviour
 {
-    public const int DEFAULT_MANA_AMOUNT = 5;
     public const int INITIAL_CARD_COUNT = 5;
+    public const int DEFUALT_AMOUNT_OF_CARDS_TO_DRAW = 1;
+    public int start_turn_mana; // Set in inspector
     public DeckComponent deck;
+    public HeroComponent hero;
     private int current_mana;
     [HideInInspector]
     public List<CardComponent> cards = new List<CardComponent>();
@@ -33,12 +35,15 @@ public class HandComponent : MonoBehaviour
     }
 
     public virtual void PlayTurn() {
-        Mana = DEFAULT_MANA_AMOUNT;
+        Mana = start_turn_mana;
         if (isFirstTurn) {
             isFirstTurn = false;
         }
         else {
-            DrawCard();
+            for (int i = 0; i < DEFUALT_AMOUNT_OF_CARDS_TO_DRAW; i++)
+            {
+                DrawCard();
+            }
         }
     }
 
@@ -61,7 +66,8 @@ public class HandComponent : MonoBehaviour
         Card_ScriptableObject card_so = deck.DrawCard();
 
         if (card_so == null) {
-            Debug.Log("No cards left in deck.");
+            GameManagerComponent.Instance.QueueMessage("Dealing damage - no cards in deck!", 1f);
+            hero.Hit(1);
             return;
         }
         

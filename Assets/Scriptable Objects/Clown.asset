@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributes: []
   cardName: The Clown
-  attackStrength: 6
+  attackStrength: 5
   hp: 5
-  cost: 5
+  cost: 4
   image: {fileID: 21300000, guid: 5a97057d9640a9a46a2108ecbfb998cd, type: 3}

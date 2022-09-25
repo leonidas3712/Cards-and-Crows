@@ -28,12 +28,5 @@ public class LaneComponent : MonoBehaviour
         if (null != playerSlot.current_minion) {
             playerTarget.Hit(playerSlot.current_minion.cardSO.attackStrength);
         }
-        
-        if (!playerTarget.IsAlive()) {
-            playerTarget.Death();
-        }
-        if (!enemyTarget.IsAlive()) {
-            enemyTarget.Death();
-        }
     }
 }

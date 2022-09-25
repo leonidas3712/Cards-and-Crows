@@ -6,6 +6,7 @@ using TMPro;
 
 public abstract class EntityComponent : MonoBehaviour
 {
+    public bool isAlive = true;
     public int hp;
 
     public TextMeshProUGUI hpText;
@@ -21,11 +22,20 @@ public abstract class EntityComponent : MonoBehaviour
     }
     
     public void Hit(int damage) {
+        if (!isAlive) {
+            Debug.Log("Why do you hit a dead object?", this);
+            return;
+        }
         HP = Math.Max(0, hp - damage);
+        if (hp <= 0) {
+            isAlive = false;
+            Death();
+        }
     }
 
     public bool IsAlive() {
-        return hp != 0;
+        return isAlive;
     }
+
     public abstract void Death();
 }

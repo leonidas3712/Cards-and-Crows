@@ -30,7 +30,7 @@ public class HeroComponent : EntityComponent
     }
 
     public override void Death() {
-        throw new NotImplementedException();
+        GameManagerComponent.Instance.QueueMessage("Game over.", 2);
     }
 
     // Start is called before the first frame update

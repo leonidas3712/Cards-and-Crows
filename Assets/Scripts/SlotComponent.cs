@@ -36,7 +36,8 @@ public class SlotComponent : MonoBehaviour
         }
 
         current_minion = minion;
-
+        current_minion.transform.SetParent(transform);
+        current_minion.transform.position = Vector3.zero;
         //****something with ui nad positioning
     }
 

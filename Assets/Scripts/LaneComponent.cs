@@ -35,5 +35,9 @@ public class LaneComponent : MonoBehaviour
         if (!enemyTarget.IsAlive()) {
             enemyTarget.Death();
         }
+        playerMinion = null;
+        enemyMinion = null;
+        playerTarget = null;
+        enemyTarget = null;
     }
 }

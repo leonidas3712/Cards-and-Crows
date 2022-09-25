@@ -28,10 +28,11 @@ public class PlayerHandComponent : HandComponent
     public void SelectCard(PlayerCardComponent cardComponent) {
         if (selectedCard != null) {
             selectedCard.OnDeselectCard();
+            if (cardComponent == selectedCard) {
+                selectedCard = null;
+                return;
+            }
             selectedCard = null;
-        }
-        if (cardComponent == selectedCard) {
-            return;
         }
         if (PlayerInputManager.Instance.is_in_switch_mode) {
             GameManagerComponent.Instance.QueueMessage("Can't select card when\nSwitch Position is ON", 0.5f);

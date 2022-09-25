@@ -61,13 +61,13 @@ public class MinionComponent : EntityComponent
             targetPosition = (target.transform.position + transform.position) / 2;
         }
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(transform.DOMove(targetPosition, 1f));
+        sequence.Append(transform.DOMove(targetPosition, 0.4f));
         sequence.AppendCallback(
             () => {
                 target.Hit(cardSO.attackStrength);
             }
         );
-        sequence.Append(transform.DOLocalMove(Vector3.zero, 1f));
+        sequence.Append(transform.DOLocalMove(Vector3.zero, 0.4f));
         return sequence;
     }
 

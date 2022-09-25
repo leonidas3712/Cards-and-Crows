@@ -75,3 +75,5 @@ crashlytics-build.properties
 /.vscode
 Nuget/
 omnisharp.json
+*.pdn
+*.pdn.meta

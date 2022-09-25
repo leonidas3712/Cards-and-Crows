@@ -19,6 +19,9 @@ public class DeckComponent : MonoBehaviour
         int randomIndex = Random.Range(0, cards.Count - 1);
         Card_ScriptableObject card_so = Instantiate(cards[randomIndex]);
         cards.RemoveAt(randomIndex);
+        if (cards.Count == 0) {
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
         return card_so;
     }
 }

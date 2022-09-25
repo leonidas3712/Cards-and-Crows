@@ -12,7 +12,6 @@ public class EnemyAI : MonoBehaviour
     }
 
     public void Play(){
-        
         foreach(EnemyCardComponent card in hand.cards){
             if(hand.Mana-card.card_so.cost>=0){
                 foreach(SlotComponent slot in slots){

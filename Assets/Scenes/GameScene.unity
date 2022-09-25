@@ -1203,6 +1203,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_in_switch_mode: 0
   first_switch_slot: {fileID: 0}
+  board: {fileID: 762724227}
+  slotSpriteDefaultBorderColor: {r: 0.58431375, g: 0, b: 0, a: 0}
+  slotSpriteSwitchBorderColor: {r: 0.15566039, g: 0.46428582, b: 1, a: 0}
   playerHand: {fileID: 106888831}
 --- !u!114 &1285553764
 MonoBehaviour:

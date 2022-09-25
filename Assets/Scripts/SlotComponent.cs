@@ -17,7 +17,8 @@ public class SlotComponent : MonoBehaviour
     public Color defaultBorderColor;
     public Color hoveredBorderColor;
 
-    bool isSlotHoverd;
+    bool isSlotHovered;
+    bool isSlotSelected; // (For switching)
     private Vector3 originalScale;
     private Vector3 upScale;
 
@@ -54,6 +55,16 @@ public class SlotComponent : MonoBehaviour
         current_minion.SetSlot(this);
     }
 
+    public void SelectSlot() {
+        isSlotSelected = true;
+        border.DOFade(1, 0.1f);
+    }
+
+    public void DeselectSlot() {
+        isSlotSelected = false;
+        border.DOFade(0, 0.1f);
+    }
+
     public void switchMinion(SlotComponent other_slot) {
         MinionComponent other_minion = other_slot.current_minion;
         MinionComponent curr_minion = this.current_minion;
@@ -76,13 +87,13 @@ public class SlotComponent : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (isSlotHoverd) {
+        if (isSlotHovered) {
             return;
         }
         if (!PlayerInputManager.Instance.CanSlotBeSelected()) {
             return;
         }
-        isSlotHoverd = true;
+        isSlotHovered = true;
         border.DOFade(1, 0.1f);
     }
 
@@ -94,10 +105,12 @@ public class SlotComponent : MonoBehaviour
 
     void OnMouseExit()
     {
-        if (!isSlotHoverd) {
+        if (!isSlotHovered) {
             return;
         }
-        isSlotHoverd = false;
-        border.DOFade(0, 0.1f);
+        isSlotHovered = false;
+        if (!isSlotSelected) {
+            border.DOFade(0, 0.1f);
+        }
     }
 }

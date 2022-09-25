@@ -28,6 +28,10 @@ public class HandComponent : MonoBehaviour
         }
     }
 
+    public virtual void NotEnoughMana() {
+        // Overriden by PlayerHandComponent.
+    }
+
     public virtual void PlayTurn() {
         Mana = DEFAULT_MANA_AMOUNT;
         if (isFirstTurn) {

@@ -23,6 +23,10 @@ public class PlayerInputManager : MonoBehaviour
     // Input manager
     public bool is_in_switch_mode = false;
     public SlotComponent first_switch_slot = null;
+    public BoardComponent board;
+    private LinkedList<SpriteRenderer> slotBorderSprites = new LinkedList<SpriteRenderer>();
+    public Color slotSpriteDefaultBorderColor;
+    public Color slotSpriteSwitchBorderColor;
 
     public PlayerHandComponent playerHand;
     private bool isPlayerTurn;
@@ -41,11 +45,29 @@ public class PlayerInputManager : MonoBehaviour
         );
     }
 
+    void Start() {
+        foreach (LaneComponent lane in board.GetComponentsInChildren<LaneComponent>()) {
+            SpriteRenderer sprite = lane.playerSlot.border.GetComponent<SpriteRenderer>();
+            slotBorderSprites.AddFirst(sprite);
+            sprite.color = slotSpriteDefaultBorderColor;
+        }
+    }
+
     public void SetSwitchMode(bool state) {
         Debug.Log("Seting switch mode to " + state);
         is_in_switch_mode = state;
         if (state) {
             playerHand.DeselectCurrentCard();
+            foreach(SpriteRenderer slotSprite in slotBorderSprites) {
+                slotSprite.color = slotSpriteSwitchBorderColor;
+            }
+        } else {
+            if (first_switch_slot != null) {
+                first_switch_slot.DeselectSlot();
+            }
+            foreach(SpriteRenderer slotSprite in slotBorderSprites) {
+                slotSprite.color = slotSpriteDefaultBorderColor;
+            }
         }
     }
 
@@ -57,14 +79,28 @@ public class PlayerInputManager : MonoBehaviour
 
         if (is_in_switch_mode)
         {
-            if (first_switch_slot != null && slot != first_switch_slot)
+            if (first_switch_slot != null)
             {
+                first_switch_slot.DeselectSlot();
+                slot.DeselectSlot(); // To temporarily remove border
+                if (slot.current_minion == first_switch_slot.current_minion) {
+                    // (Occurs when same slot is selected, or if both slots are empty)
+                    first_switch_slot = null;
+                    return;
+                }
+                if (playerHand.Mana < 1) {
+                    playerHand.NotEnoughMana();
+                    first_switch_slot = null;
+                    return;
+                }
                 slot.switchMinion(first_switch_slot);
                 first_switch_slot = null;
+                playerHand.Mana -= 1;
             }
-            else if(slot.current_minion != null)
+            else
             {
                 first_switch_slot = slot;
+                first_switch_slot.SelectSlot();
             }
         }
     }

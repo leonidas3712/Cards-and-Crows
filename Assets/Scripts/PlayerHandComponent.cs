@@ -21,6 +21,10 @@ public class PlayerHandComponent : HandComponent
         Debug.Log("Player Turn started");
     }
 
+    public override void NotEnoughMana() {
+        GameManagerComponent.Instance.QueueMessage("Not enough mana", 0.1f);
+    }
+
     public void SelectCard(PlayerCardComponent cardComponent) {
         if (selectedCard != null) {
             selectedCard.OnDeselectCard();
@@ -31,9 +35,13 @@ public class PlayerHandComponent : HandComponent
         if (PlayerInputManager.Instance.is_in_switch_mode) {
             return;
         }
-        if (isPlaying && Mana >= cardComponent.card_so.cost) {
-            selectedCard = cardComponent;
-            selectedCard.OnSelectCard();
+        if (isPlaying) {
+            if (Mana >= cardComponent.card_so.cost) {
+                selectedCard = cardComponent;
+                selectedCard.OnSelectCard();
+            } else {
+                NotEnoughMana();
+            }
         }
     }
 

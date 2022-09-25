@@ -26,4 +26,9 @@ public class CardComponent : MonoBehaviour
     {
         transform.DOMoveX(distanceBetweenCards * (cardIndex - (amountOfCards-1)/2f), 1);
     }
+
+    public void BringCardFromDeck(int amountOfCards)
+    {
+        transform.DOMove(new Vector3(distanceBetweenCards * (amountOfCards-1)/2f, transform.position.y, transform.position.z), 1).From(hand.deck.transform.position);
+    }
 }

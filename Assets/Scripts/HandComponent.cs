@@ -66,6 +66,7 @@ public class HandComponent : MonoBehaviour
         cards.Add(card);
 
         AdjustCards();
+        card.BringCardFromDeck(transform.childCount);
     }
 
     protected virtual void Awake() {

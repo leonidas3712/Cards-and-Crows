@@ -19,12 +19,15 @@ public class PlayerCardComponent : CardComponent
     public TextMeshProUGUI HP;
     public TextMeshProUGUI cost;
     public TextMeshProUGUI attackStrength;
+
+    public Color deselectedColor;
+    public Color selectedColor;
     
     public void Start() {
         originalScale = transform.localScale;
         upScale = originalScale * 1.2f;
         Debug.Log(border);
-        border.color = Color.grey;
+        border.color = deselectedColor;
     }
 
     public override void InitiateCard(HandComponent hand, Card_ScriptableObject card_so)
@@ -73,7 +76,7 @@ public class PlayerCardComponent : CardComponent
     public virtual void OnSelectCard()
     {
         isCardSelected = true;
-        border.color = Color.green;
+        border.color = selectedColor;
     }
 
     public virtual void OnDeselectCard()
@@ -82,6 +85,6 @@ public class PlayerCardComponent : CardComponent
         if (!isCardHovered) {
             transform.DOScale(originalScale, 0.3f);
         }
-        border.color = Color.grey;
+        border.color = deselectedColor;
     }
 }

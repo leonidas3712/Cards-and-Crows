@@ -200,13 +200,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card_so: {fileID: 0}
+  border: {fileID: 2603467991024613764}
   nameText: {fileID: 9179944952346821651}
   attributeText: {fileID: 2577283623666451521}
   cardImage: {fileID: 2153371963608012805}
   HP: {fileID: 3724278473687829914}
   cost: {fileID: 7137028606763416543}
   attackStrength: {fileID: 1886897682599615128}
-  border: {fileID: 2603467991024613764}
+  deselectedColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
+  selectedColor: {r: 1, g: 0.54365414, b: 0, a: 0}
 --- !u!212 &1876138815851575806
 SpriteRenderer:
   m_ObjectHideFlags: 0

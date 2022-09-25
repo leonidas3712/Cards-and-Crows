@@ -41,6 +41,11 @@ public class PlayerInputManager : MonoBehaviour
         );
     }
 
+    public void SetSwitchMode(bool state) {
+        Debug.Log("Seting switch mode to " + state);
+        is_in_switch_mode = state;
+    }
+
     public void HandleSlotClick(SlotComponent slot) {
         if (playerHand.selectedCard != null) {
             playerHand.selectedCard.PlayCard(slot);

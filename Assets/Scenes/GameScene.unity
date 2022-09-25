@@ -906,6 +906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8284c557b97384340959e2bad6a3556a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  is_in_switch_mode: 0
+  first_switch_slot: {fileID: 0}
   playerHand: {fileID: 106888831}
 --- !u!114 &1285553764
 MonoBehaviour:
@@ -1056,7 +1058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.size
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[0]
@@ -1081,9 +1083,17 @@ PrefabInstance:
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 2d7f2adb2a9dea047b87c8a78ff144d2, type: 2}
+      objectReference: {fileID: 11400000, guid: b326d5b4dee860e4095a2e49c58823c2, type: 2}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: d58bfbe93aeebff468a7aaee696878d5, type: 2}
+    - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: cards.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69cb33a0ee2bd92438547c2412dff936, type: 2}
+    - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: cards.Array.data[8]
       value: 
       objectReference: {fileID: 11400000, guid: 2d7f2adb2a9dea047b87c8a78ff144d2, type: 2}
     m_RemovedComponents: []
@@ -1813,7 +1823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.size
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[0]
@@ -1842,19 +1852,27 @@ PrefabInstance:
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[6]
       value: 
-      objectReference: {fileID: 11400000, guid: 2e6c5d7810778b44488e899682031e59, type: 2}
+      objectReference: {fileID: 11400000, guid: b326d5b4dee860e4095a2e49c58823c2, type: 2}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[7]
       value: 
-      objectReference: {fileID: 11400000, guid: 65c1da5781a6b9e46bfd16a530abb5bd, type: 2}
+      objectReference: {fileID: 11400000, guid: 9fcfb7a54ae37814cb22a3aa84d995d9, type: 2}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[8]
       value: 
-      objectReference: {fileID: 11400000, guid: 65c1da5781a6b9e46bfd16a530abb5bd, type: 2}
+      objectReference: {fileID: 11400000, guid: 69cb33a0ee2bd92438547c2412dff936, type: 2}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[9]
       value: 
-      objectReference: {fileID: 11400000, guid: 65c1da5781a6b9e46bfd16a530abb5bd, type: 2}
+      objectReference: {fileID: 11400000, guid: 29e99501e082a9a46b876e401c6f361f, type: 2}
+    - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: cards.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: d58bfbe93aeebff468a7aaee696878d5, type: 2}
+    - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: cards.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e6c5d7810778b44488e899682031e59, type: 2}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cardScriptableObjects.Array.size
       value: 3

@@ -19,20 +19,26 @@ public class CardComponent : MonoBehaviour
 
     public virtual void PlayCard(SlotComponent slot)
     {
-        if (slot.CreateMinion(card_so)) {
-            transform.SetParent(null);
-            Destroy(gameObject);
-            hand.AdjustCards();
+        if (hand.Mana - card_so.cost >= 0)
+        {
+            if (slot.CreateMinion(card_so))
+            {
+                transform.SetParent(null);
+                Destroy(gameObject);
+                hand.AdjustCards();
+            }
+            hand.Mana -= card_so.cost;
         }
+
     }
-    
+
     public void AdjustCardPosition(int cardIndex, int amountOfCards)
     {
-        transform.DOLocalMove(new Vector3(distanceBetweenCards * (cardIndex - (amountOfCards-1)/2f), 0, 0), 1);
+        transform.DOLocalMove(new Vector3(distanceBetweenCards * (cardIndex - (amountOfCards - 1) / 2f), 0, 0), 1);
     }
 
     public void BringCardFromDeck(int amountOfCards)
     {
-        transform.DOMove(new Vector3(distanceBetweenCards * (amountOfCards-1)/2f, transform.position.y, transform.position.z), 1).From(hand.deck.transform.position);
+        transform.DOMove(new Vector3(distanceBetweenCards * (amountOfCards - 1) / 2f, transform.position.y, transform.position.z), 1).From(hand.deck.transform.position);
     }
 }

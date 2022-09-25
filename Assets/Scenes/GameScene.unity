@@ -428,6 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfb07c9c474c8647a6a8c13f61ab5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start_turn_mana: 5
   deck: {fileID: 8925766135221572994}
   hero: {fileID: 7772010530442502090}
   cards: []
@@ -1593,6 +1594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f7b7fc18291924d80f1fd60b9a5759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start_turn_mana: 5
   deck: {fileID: 921750692}
   hero: {fileID: 1555787497}
   cards: []
@@ -1606,6 +1608,30 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1797881204469526213, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: m_text
+      value: hello
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797881204469526213, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: m_margin.w
+      value: 2.2647214
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797881204469526213, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: m_margin.x
+      value: 1.8917083
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797881204469526213, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: m_margin.y
+      value: 0.8673567
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797881204469526213, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: m_margin.z
+      value: 0.81520426
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797881204469526213, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2339368265564391862, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1669,6 +1695,14 @@ PrefabInstance:
     - target: {fileID: 2747690976854766843, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: m_Name
       value: EnemyDeck
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159812192511842409, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410730371362790951, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cardPrefab

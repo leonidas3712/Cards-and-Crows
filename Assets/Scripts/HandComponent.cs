@@ -10,6 +10,7 @@ public class HandComponent : MonoBehaviour
     public const int INITIAL_CARD_COUNT = 5;
     public int start_turn_mana = DEFAULT_MANA_AMOUNT;
     public DeckComponent deck;
+    public HeroComponent hero;
     private int current_mana;
     [HideInInspector]
     public List<CardComponent> cards = new List<CardComponent>();
@@ -62,7 +63,8 @@ public class HandComponent : MonoBehaviour
         Card_ScriptableObject card_so = deck.DrawCard();
 
         if (card_so == null) {
-            Debug.Log("No cards left in deck.");
+            GameManagerComponent.Instance.QueueMessage("Dealing damage - no cards in deck!", 1f);
+            hero.Hit(1);
             return;
         }
         

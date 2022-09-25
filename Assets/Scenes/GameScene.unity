@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 8925766135221572994}
+  hero: {fileID: 7772010530442502090}
   cards: []
   current_mana_text: {fileID: 1619249459}
   cardPrefab: {fileID: 4475435664852391567, guid: d4e764954f65ecc4ea9afb6af28782f0, type: 3}
@@ -1593,6 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 921750692}
+  hero: {fileID: 1555787497}
   cards: []
   current_mana_text: {fileID: 2052066677}
   cardPrefab: {fileID: 8179640675338378138, guid: 853ac1ce23de9134ea0531e6e18efba5, type: 3}
@@ -2056,6 +2058,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1004252450}
+--- !u!114 &1555787497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3008731403974171527, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+  m_PrefabInstance: {fileID: 375693277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cef763d152654d47a5e90c419eb5438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1619249459 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1831765849210784880, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
@@ -2565,6 +2578,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
   m_PrefabInstance: {fileID: 7772010530442502088}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7772010530442502090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3008731403974171527, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+  m_PrefabInstance: {fileID: 7772010530442502088}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cef763d152654d47a5e90c419eb5438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8925766135221572993
 PrefabInstance:
   m_ObjectHideFlags: 0

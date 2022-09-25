@@ -33,6 +33,7 @@ public class PlayerHandComponent : HandComponent
             return;
         }
         if (PlayerInputManager.Instance.is_in_switch_mode) {
+            GameManagerComponent.Instance.QueueMessage("Can't select card when\nSwitch Position is ON", 0.5f);
             return;
         }
         if (isPlaying) {

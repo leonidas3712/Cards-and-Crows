@@ -14,7 +14,8 @@ public class HeroComponent : EntityComponent
     private bool _isPlayerHero; // Do not modify! (Modified within Editor)
     public bool IsPlayerHero {get { return _isPlayerHero;}}
 
-    void Awake() {
+    public override void Awake() {
+        base.Awake();
         if (IsPlayerHero) {
             if (playerHeroInstance != null) {
                 throw new SystemException("Player hero was created twice");
@@ -30,7 +31,13 @@ public class HeroComponent : EntityComponent
     }
 
     public override void Death() {
-        GameManagerComponent.Instance.QueueMessage("Game over.", 2);
+        if (IsPlayerHero) {
+            GameManagerComponent.Instance.QueueMessage("DEFEAT", 2);
+        } else {
+            if (playerHeroInstance.IsAlive()) {
+                GameManagerComponent.Instance.QueueMessage("VICTORY", 2);
+            }
+        }
     }
 
     // Start is called before the first frame update

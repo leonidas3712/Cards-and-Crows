@@ -32,7 +32,7 @@ Transform:
   - {fileID: 2154709469931939784}
   - {fileID: 7832323723187409684}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4923060292617105386
 MonoBehaviour:
@@ -163,6 +163,10 @@ PrefabInstance:
       propertyPath: opposingSlot
       value: 
       objectReference: {fileID: 4825247465087442313}
+    - target: {fileID: 6374770393979335705, guid: 45df704b1e4a3e740b4c4ef8822abfcb, type: 3}
+      propertyPath: isPlayerSided
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8517153558675061380, guid: 45df704b1e4a3e740b4c4ef8822abfcb, type: 3}
       propertyPath: m_RootOrder
       value: -1

@@ -45,6 +45,8 @@ public class GameManagerComponent : MonoBehaviour
     public static UnityEvent enemyTurnStartedEvent = new UnityEvent();
     public static UnityEvent enemyTurnEndedEvent = new UnityEvent();
 
+    public static UnityEvent laneBattleEndedEvent = new UnityEvent();
+
     public static UnityEvent battleStartedEvent = new UnityEvent();
     public static UnityEvent battleEndedEvent = new UnityEvent();
 

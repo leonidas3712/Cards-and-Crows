@@ -6,10 +6,22 @@ using TMPro;
 
 public abstract class EntityComponent : MonoBehaviour
 {
-    public bool isAlive = true;
+    private bool isAlive = true;
+    private bool hasDied = false;
     public int hp;
 
     public TextMeshProUGUI hpText;
+
+    public virtual void Awake() {
+        GameManagerComponent.laneBattleEndedEvent.AddListener(
+            () => {
+                if (!isAlive && !hasDied) {
+                    hasDied = true;
+                    Death();
+                }
+            }
+        );
+    }
 
     public int HP {
         get {
@@ -29,7 +41,6 @@ public abstract class EntityComponent : MonoBehaviour
         HP = Math.Max(0, hp - damage);
         if (hp <= 0) {
             isAlive = false;
-            Death();
         }
     }
 

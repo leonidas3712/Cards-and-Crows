@@ -24,6 +24,7 @@ public class CardComponent : MonoBehaviour
             if (slot.CreateMinion(card_so))
             {
                 transform.SetParent(null);
+                transform.DOKill();
                 Destroy(gameObject);
                 hand.AdjustCards();
             }

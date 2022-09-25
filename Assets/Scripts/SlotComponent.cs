@@ -60,7 +60,7 @@ public class SlotComponent : MonoBehaviour
             return;
         }
         isSlotHoverd = true;
-        border.DOFade(1, 0f);
+        border.DOFade(1, 0.1f);
     }
 
     void OnMouseOver() {
@@ -75,6 +75,6 @@ public class SlotComponent : MonoBehaviour
             return;
         }
         isSlotHoverd = false;
-        border.DOFade(0, 0.2f);
+        border.DOFade(0, 0.1f);
     }
 }

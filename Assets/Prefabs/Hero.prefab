@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cef763d152654d47a5e90c419eb5438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlive: 1
   hp: 0
   hpText: {fileID: 0}
   DEFAULT_HP_AMOUNT: 20
@@ -416,7 +415,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c6f0258cd76b26b438c25fc903521f76, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7877358, g: 0.8254717, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -434,6 +433,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 4003001528768526670}
     m_Modifications:
+    - target: {fileID: 1504621090044344812, guid: a8af6c3b4848f63498a195e240304a80, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504621090044344812, guid: a8af6c3b4848f63498a195e240304a80, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504621090044344812, guid: a8af6c3b4848f63498a195e240304a80, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9245283
+      objectReference: {fileID: 0}
     - target: {fileID: 5060014972232142068, guid: a8af6c3b4848f63498a195e240304a80, type: 3}
       propertyPath: m_Name
       value: hp_count

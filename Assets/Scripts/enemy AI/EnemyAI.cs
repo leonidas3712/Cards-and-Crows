@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
 
     public void Play(){
         
-        foreach(EnemyCardComponent card in hand.cards){
+        foreach(EnemyCardComponent card in hand.GetComponentsInChildren<EnemyCardComponent>()){
             if(hand.Mana-card.card_so.cost>=0){
                 foreach(SlotComponent slot in slots){
                     if(slot.current_minion == null){

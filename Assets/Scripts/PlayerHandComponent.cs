@@ -22,14 +22,16 @@ public class PlayerHandComponent : HandComponent
     }
 
     public void SelectCard(PlayerCardComponent cardComponent) {
+        if (selectedCard != null) {
+            selectedCard.OnDeselectCard();
+        }
+        if (cardComponent == selectedCard) {
+            return;
+        }
+        if (PlayerInputManager.Instance.is_in_switch_mode) {
+            return;
+        }
         if (isPlaying && Mana >= cardComponent.card_so.cost) {
-            if (cardComponent == selectedCard) {
-                selectedCard.OnDeselectCard();
-                return;
-            }
-            if (selectedCard != null) {
-                selectedCard.OnDeselectCard();
-            }
             selectedCard = cardComponent;
             selectedCard.OnSelectCard();
         }

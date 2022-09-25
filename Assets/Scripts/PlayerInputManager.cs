@@ -44,6 +44,9 @@ public class PlayerInputManager : MonoBehaviour
     public void SetSwitchMode(bool state) {
         Debug.Log("Seting switch mode to " + state);
         is_in_switch_mode = state;
+        if (state) {
+            playerHand.DeselectCurrentCard();
+        }
     }
 
     public void HandleSlotClick(SlotComponent slot) {

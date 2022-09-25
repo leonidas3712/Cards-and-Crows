@@ -8,6 +8,7 @@ public class HandComponent : MonoBehaviour
 {
     public const int DEFAULT_MANA_AMOUNT = 5;
     public const int INITIAL_CARD_COUNT = 5;
+    public const int DEFUALT_AMOUNT_OF_CARDS_TO_DRAW = 2;
     public int start_turn_mana = DEFAULT_MANA_AMOUNT;
     public DeckComponent deck;
     public HeroComponent hero;
@@ -40,7 +41,10 @@ public class HandComponent : MonoBehaviour
             isFirstTurn = false;
         }
         else {
-            DrawCard();
+            for (int i = 0; i < DEFUALT_AMOUNT_OF_CARDS_TO_DRAW; i++)
+            {
+                DrawCard();
+            }
         }
     }
 

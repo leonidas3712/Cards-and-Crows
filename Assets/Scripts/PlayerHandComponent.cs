@@ -24,6 +24,7 @@ public class PlayerHandComponent : HandComponent
     public void SelectCard(PlayerCardComponent cardComponent) {
         if (isPlaying && Mana >= cardComponent.card_so.cost) {
             if (cardComponent == selectedCard) {
+                selectedCard.OnDeselectCard();
                 return;
             }
             if (selectedCard != null) {

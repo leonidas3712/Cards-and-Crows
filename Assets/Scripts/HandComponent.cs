@@ -43,7 +43,7 @@ public class HandComponent : MonoBehaviour
         }
     }
 
-    private void AdjustCards() {
+    public void AdjustCards() {
         int card_index = 0;
         foreach(Transform child in transform) {
             CardComponent cardComponent = child.GetComponent<CardComponent>(); 

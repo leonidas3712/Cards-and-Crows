@@ -19,8 +19,10 @@ public class CardComponent : MonoBehaviour
 
     public virtual void PlayCard(SlotComponent slot)
     {
-        if (!slot.CreateMinion(card_so)) {
+        if (slot.CreateMinion(card_so)) {
+            transform.SetParent(null);
             Destroy(gameObject);
+            hand.AdjustCards();
         }
     }
     

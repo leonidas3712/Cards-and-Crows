@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 3f99bafd8fce3ec429a2d9e5da47939e, type: 3}
-  m_Color: {r: 0.3314347, g: 0.41389644, b: 0.5283019, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefb35231055ef74b88536eb0c17b03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlive: 1
   hp: 0
   hpText: {fileID: 5428479911535642813}
   cardSO: {fileID: 0}
+  slot: {fileID: 0}
   minionSprite: {fileID: 1366750585842351092}
   attackStrength: {fileID: 6222585168618812876}
 --- !u!1001 &641688644965516174

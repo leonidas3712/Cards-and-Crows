@@ -92,7 +92,7 @@ public class GameManagerComponent : MonoBehaviour
         messageSequence.AppendInterval(message.messageTime);
         messageSequence.Append(messagePanel.DOFade(0, 0.5f));
         messageSequence.Join(messageText.DOFade(0, 0.5f));
-        messageSequence.AppendCallback(
+        messageSequence.OnKill(
             () => {
                 Debug.Log("Message ended!");
                 messagePanel.gameObject.SetActive(false);

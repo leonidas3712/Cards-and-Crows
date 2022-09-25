@@ -16,11 +16,5 @@ public class EnemyHandComponent : HandComponent
     public override void PlayTurn() {
         base.PlayTurn();
         Debug.Log("Enemy Turn Start" + gameObject);
-        Invoke(nameof(EndTurn), 1);
-    }
-
-    void EndTurn() {
-        Debug.Log("Enemy turn end");
-        GameManagerComponent.enemyTurnEndedEvent.Invoke();
     }
 }

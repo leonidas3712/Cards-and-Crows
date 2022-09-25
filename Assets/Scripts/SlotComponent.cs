@@ -10,6 +10,8 @@ public class SlotComponent : MonoBehaviour
     public LaneComponent lane;
     [HideInInspector]
     public MinionComponent current_minion;
+    public bool isPlayerSided; // true = Player's slot        false = Enemy's slot .   DO NOT MODIFY. READONLY.
+    public SlotComponent opposingSlot;
     public MinionComponent minionPrefab;
     public SpriteRenderer border;
     public Color defaultBorderColor;
@@ -20,6 +22,7 @@ public class SlotComponent : MonoBehaviour
     private Vector3 upScale;
 
     public static SlotComponent selectedSlot;
+
     public void Start() {
         originalScale = transform.localScale;
         upScale = originalScale * 1.2f;
@@ -65,7 +68,7 @@ public class SlotComponent : MonoBehaviour
             return false;
         }
         MinionComponent minion = Instantiate(minionPrefab);
-        minion.InitiateMinion(card_so);
+        minion.InitiateMinion(this, card_so);
         AttachMinion(minion);
         return true;
     } 

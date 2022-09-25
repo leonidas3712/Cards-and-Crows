@@ -5,15 +5,22 @@ using UnityEngine;
 public class BoardComponent : MonoBehaviour
 {
     void Awake() {
-        GameManagerComponent.battleStartedEvent.AddListener(Battle);
+        GameManagerComponent.battleStartedEvent.AddListener(
+            () => {
+                StartCoroutine(Battle());
+            }
+        );
         GameManagerComponent.playerTurnEndedEvent.AddListener(GameManagerComponent.battleStartedEvent.Invoke);
     }
 
-    void Battle() {
+    IEnumerator Battle() {
         Debug.Log("Battle Started");
         foreach (LaneComponent lane in GetComponentsInChildren<LaneComponent>()) {
-            lane.Attack();
+            if (lane.Attack()) {
+                yield return new WaitForSeconds(1f);
+            }
         }
+        yield return new WaitForSeconds(2f);
         Debug.Log("Battle Ended");
         if (GameManagerComponent.IsGameEnd()) {
             GameManagerComponent.gameEndedEvent.Invoke();

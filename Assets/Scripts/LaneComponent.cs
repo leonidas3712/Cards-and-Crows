@@ -28,5 +28,9 @@ public class LaneComponent : MonoBehaviour
         if (null != playerSlot.current_minion) {
             playerTarget.Hit(playerSlot.current_minion.cardSO.attackStrength);
         }
+        playerMinion = null;
+        enemyMinion = null;
+        playerTarget = null;
+        enemyTarget = null;
     }
 }

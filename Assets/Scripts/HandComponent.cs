@@ -8,6 +8,7 @@ public class HandComponent : MonoBehaviour
 {
     public const int DEFAULT_MANA_AMOUNT = 5;
     public const int INITIAL_CARD_COUNT = 5;
+    public int start_turn_mana = DEFAULT_MANA_AMOUNT;
     public DeckComponent deck;
     private int current_mana;
     [HideInInspector]
@@ -33,7 +34,7 @@ public class HandComponent : MonoBehaviour
     }
 
     public virtual void PlayTurn() {
-        Mana = DEFAULT_MANA_AMOUNT;
+        Mana = start_turn_mana;
         if (isFirstTurn) {
             isFirstTurn = false;
         }

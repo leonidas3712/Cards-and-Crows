@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHandComponent : HandComponent
 {
+    public const int ENEMY_DEFAULT_MANA = 6;
     protected override void Awake() {
         base.Awake();
         GameManagerComponent.enemyTurnStartedEvent.AddListener(PlayTurn);
@@ -14,6 +15,7 @@ public class EnemyHandComponent : HandComponent
     }
 
     public override void PlayTurn() {
+        this.start_turn_mana = ENEMY_DEFAULT_MANA;
         base.PlayTurn();
         Debug.Log("Enemy Turn Start" + gameObject);
     }

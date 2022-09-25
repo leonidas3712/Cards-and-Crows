@@ -11,7 +11,7 @@ public class SlotComponent : MonoBehaviour
     [HideInInspector]
     public MinionComponent current_minion;
     public MinionComponent minionPrefab;
-    public Image border;
+    public SpriteRenderer border;
     public Color defaultBorderColor;
     public Color hoveredBorderColor;
 

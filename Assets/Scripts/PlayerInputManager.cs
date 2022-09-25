@@ -21,6 +21,9 @@ public class PlayerInputManager : MonoBehaviour
     }
 
     // Input manager
+    public bool is_in_switch_mode = false;
+    public SlotComponent first_switch_slot = null;
+
     public PlayerHandComponent playerHand;
     private bool isPlayerTurn;
 
@@ -41,6 +44,20 @@ public class PlayerInputManager : MonoBehaviour
     public void HandleSlotClick(SlotComponent slot) {
         if (playerHand.selectedCard != null) {
             playerHand.selectedCard.PlayCard(slot);
+            return;
+        }
+
+        if (is_in_switch_mode)
+        {
+            if (first_switch_slot != null && slot != first_switch_slot)
+            {
+                slot.switchMinion(first_switch_slot);
+                first_switch_slot = null;
+            }
+            else if(slot.current_minion != null)
+            {
+                first_switch_slot = slot;
+            }
         }
     }
 

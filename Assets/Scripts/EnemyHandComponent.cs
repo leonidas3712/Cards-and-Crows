@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHandComponent : HandComponent
 {
-    public const int ENEMY_DEFAULT_MANA = 6;
+    public const int ENEMY_DEFAULT_MANA = 5;
     protected override void Awake() {
         base.Awake();
         GameManagerComponent.enemyTurnStartedEvent.AddListener(PlayTurn);

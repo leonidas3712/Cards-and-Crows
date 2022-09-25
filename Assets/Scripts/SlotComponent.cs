@@ -26,19 +26,38 @@ public class SlotComponent : MonoBehaviour
     }
 
     public void DetachMinion(){
-        current_minion.transform.SetParent(null);
-        current_minion = null;
+        if (this.current_minion != null)
+        {
+            current_minion.transform.SetParent(null);
+            current_minion = null;
+        }
     }
 
-    public void AttachMinion(MinionComponent minion){
-        if(current_minion != null){
+    public void AttachMinion(MinionComponent minion)
+    {
+        if (minion == null)
+        {
+            current_minion = null;
             return;
         }
 
+        if (current_minion != null)
+        {
+            return;
+        }
         current_minion = minion;
         current_minion.transform.SetParent(transform);
         current_minion.transform.localPosition = Vector3.zero;
-        //****something with ui nad positioning
+    }
+
+    public void switchMinion(SlotComponent other_slot) {
+        MinionComponent other_minion = other_slot.current_minion;
+        MinionComponent curr_minion = this.current_minion;
+
+        this.DetachMinion();
+        other_slot.DetachMinion();
+        other_slot.AttachMinion(curr_minion);
+        this.AttachMinion(other_minion);
     }
 
     public bool CreateMinion(Card_ScriptableObject card_so){

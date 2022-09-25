@@ -42,11 +42,6 @@ public class PlayerCardComponent : CardComponent
         attackStrength.text = card_so.attackStrength.ToString();
     }
 
-    public override void PlayCardToMinion(SlotComponent slot)
-    {
-        base.PlayCardToMinion(slot);
-    }
-
     void OnMouseEnter()
     {
         if (isCardHovered) {

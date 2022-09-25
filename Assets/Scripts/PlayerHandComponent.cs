@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerHandComponent : HandComponent
 {
-    public static PlayerCardComponent selectedCard;
+    [HideInInspector]
+    public PlayerCardComponent selectedCard;
 
     protected override void Awake() {
         base.Awake();

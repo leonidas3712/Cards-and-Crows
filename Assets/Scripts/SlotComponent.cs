@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 
 public class SlotComponent : MonoBehaviour
 {
+    [HideInInspector]
     public LaneComponent lane;
+    [HideInInspector]
     public MinionComponent current_minion;
     public MinionComponent minionPrefab;
+    public Image border;
+    public Color defaultBorderColor;
+    public Color hoveredBorderColor;
 
     bool isSlotHoverd;
     private Vector3 originalScale;
@@ -18,8 +24,14 @@ public class SlotComponent : MonoBehaviour
         originalScale = transform.localScale;
         upScale = originalScale * 1.2f;
     }
-    public void SetMinion(MinionComponent minion){
-        if(null != current_minion){
+
+    public void DetachMinion(){
+        current_minion.transform.SetParent(null);
+        current_minion = null;
+    }
+
+    public void AttachMinion(MinionComponent minion){
+        if(current_minion != null){
             return;
         }
 
@@ -29,9 +41,12 @@ public class SlotComponent : MonoBehaviour
     }
 
     public bool CreateMinion(Card_ScriptableObject card_so){
-        if(current_minion)return false;
-        MinionComponent minion = Instantiate(minionPrefab,transform);
+        if (current_minion != null) {
+            return false;
+        }
+        MinionComponent minion = Instantiate(minionPrefab, transform);
         minion.InitiateMinion(card_so);
+        AttachMinion(minion);
         return true;
     } 
 
@@ -40,13 +55,16 @@ public class SlotComponent : MonoBehaviour
         if (isSlotHoverd) {
             return;
         }
+        if (!PlayerInputManager.Instance.CanSlotBeSelected()) {
+            return;
+        }
         isSlotHoverd = true;
-        transform.DOScale(upScale, 0.3f);
+        border.DOFade(1, 0f);
     }
 
     void OnMouseOver() {
         if (Input.GetMouseButtonDown(0)) {
-            
+            PlayerInputManager.Instance.HandleSlotClick(this);
         }
     }
 
@@ -56,7 +74,6 @@ public class SlotComponent : MonoBehaviour
             return;
         }
         isSlotHoverd = false;
-            transform.DOScale(originalScale, 0.3f);
-
+        border.DOFade(0, 0.2f);
     }
 }

@@ -234,6 +234,7 @@ MonoBehaviour:
   deck: {fileID: 8925766135221572994}
   current_mana_text: {fileID: 900814844}
   cardPrefab: {fileID: 4475435664852391567, guid: d4e764954f65ecc4ea9afb6af28782f0, type: 3}
+  selectedCard: {fileID: 0}
 --- !u!1 &309944306
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,12 +395,24 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -433,6 +446,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4635627539424104161, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ad977bb395f3a2e42adeb4ad4437d5e2, type: 3}
     - target: {fileID: 4635627539424104161, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -1265,6 +1282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1285553762}
   - component: {fileID: 1285553761}
+  - component: {fileID: 1285553763}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1299,6 +1317,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1285553763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285553760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8284c557b97384340959e2bad6a3556a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHand: {fileID: 106888831}
 --- !u!1 &1335338138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.size
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[0]
@@ -1973,12 +2004,24 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4003001528768526670, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2012,6 +2055,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4635627539424104161, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b39605e08c755364786f9b02e44b22af, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a79790c993d07aa44b52caee93f4271a, type: 3}
@@ -2102,12 +2149,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.size
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 65c1da5781a6b9e46bfd16a530abb5bd, type: 2}
+      objectReference: {fileID: 11400000, guid: 2e6c5d7810778b44488e899682031e59, type: 2}
     - target: {fileID: 7289890783855060733, guid: a20351de740c26f4d8169ffd1486521e, type: 3}
       propertyPath: cards.Array.data[1]
       value: 

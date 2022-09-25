@@ -17,14 +17,16 @@ public class CardComponent : MonoBehaviour
         this.card_so = card_so;
     }
 
-    public virtual void PlayCardToMinion(SlotComponent slot)
+    public virtual void PlayCard(SlotComponent slot)
     {
-        if(!slot.CreateMinion(card_so)) Destroy(gameObject);
+        if (!slot.CreateMinion(card_so)) {
+            Destroy(gameObject);
+        }
     }
     
     public void AdjustCardPosition(int cardIndex, int amountOfCards)
     {
-        transform.DOMoveX(distanceBetweenCards * (cardIndex - (amountOfCards-1)/2f), 1);
+        transform.DOLocalMove(new Vector3(distanceBetweenCards * (cardIndex - (amountOfCards-1)/2f), 0, 0), 1);
     }
 
     public void BringCardFromDeck(int amountOfCards)

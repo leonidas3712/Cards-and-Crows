@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,9 @@ public class GameManagerComponent : MonoBehaviour
     private static GameManagerComponent _instance;
     public static GameManagerComponent Instance {
         get {
+            if (_instance == null) {
+                throw new SystemException("GameManagerComponent has not yet initiated!");
+            }
             return _instance;
         }
     }

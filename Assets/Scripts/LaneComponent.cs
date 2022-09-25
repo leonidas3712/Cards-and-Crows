@@ -10,6 +10,7 @@ public class LaneComponent : MonoBehaviour
     public EntityComponent playerTarget,enemyTarget;
     [HideInInspector]
     public MinionComponent playerMinion,enemyMinion;
+
     public void Attack(){
         if (null != playerSlot.current_minion) {
             enemyTarget = playerSlot.current_minion;
